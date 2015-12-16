@@ -39,15 +39,6 @@
             <artifactId>brooklyn-all</artifactId>
             <version>${project.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.apache.brooklyn</groupId>
-            <artifactId>brooklyn-dist</artifactId>
-            <classifier>dist</classifier>
-            <type>tar.gz</type>
-            <version>${project.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>net.sf.jopt-simple</groupId>
             <artifactId>jopt-simple</artifactId>
@@ -84,25 +75,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <phase>install</phase>
-                            <goals>
-                                <goal>copy-dependencies</goal>
-                            </goals>
-                            <configuration>
-                                <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                                <excludeArtifactIds>brooklyn-dist</excludeArtifactIds>
-                            </configuration>
-                        </execution>
-                    </executions>
-            </plugin>
-        </plugins>
-    </build> 
 </project>
 
